@@ -1,4 +1,3 @@
-import EventCard from "@/components/event-card";
 import EventsList from "@/components/events-list";
 import H1 from "@/components/h1";
 import { EventoEvent } from "@/lib/types";
