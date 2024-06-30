@@ -1,4 +1,5 @@
 import { EventoEvent } from "@/lib/types"
+import EventCard from "./event-card"
 
 type EventsListProps = {
   events: EventoEvent[]
@@ -6,9 +7,9 @@ type EventsListProps = {
 
 export default function EventsList({ events }: EventsListProps) {
   return (
-    <section>
+    <section className="px-5 max-w-[1100px] flex flex-wrap gap-10 justify-center">
       {events.map((event) => (
-        <li key={event.id}>{event.name}</li>
+        <EventCard key={event.id} event={event} />
       ))}
     </section>
   )

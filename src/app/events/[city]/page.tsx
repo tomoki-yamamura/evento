@@ -1,4 +1,5 @@
 import EventCard from "@/components/event-card";
+import EventsList from "@/components/events-list";
 import H1 from "@/components/h1";
 import { EventoEvent } from "@/lib/types";
 
@@ -23,11 +24,6 @@ export default async function EventsPage({ params }: EventsPageProps) {
       </H1>
 
     <EventsList events={events} />
-      {
-        events.map(event => (
-          <EventCard event={event} key={event.id} />
-        ))
-      }
     </main>
   )
 }
