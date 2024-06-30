@@ -7,5 +7,5 @@ export type EventoEvent = {
   date: Date,
   organizerName: string;
   imageUrl: string;
-  desctiprion: string
+  description: string
 }
