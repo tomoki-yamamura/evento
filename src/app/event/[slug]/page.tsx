@@ -1,6 +1,6 @@
 import H1 from "@/components/h1";
 import { EventoEvent } from "@/lib/types";
-import { capitalize } from "@/lib/utils";
+import { capitalize, getEvent } from "@/lib/utils";
 import { Metadata } from "next";
 import Image from "next/image";
 
@@ -12,11 +12,8 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = params.slug
-  const response = await fetch(
-    `https://bytegrad.com/course-assets/projects/evento/api/events/${slug}`
-  );
-  const event: EventoEvent = await response.json()
-
+  
+  const event = await getEvent(slug)
   return {
     title: event.name,
   }
@@ -114,4 +111,3 @@ function SectionContent({ children }: SectionContentProps) {
     <p className=" max-w-4xl text-lg leading-8 text-white/75">{children}</p>
   )
 }
-
