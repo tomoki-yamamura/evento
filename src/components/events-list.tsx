@@ -1,7 +1,7 @@
 import { EventoEvent } from "@/lib/types"
 import EventCard from "./event-card"
-import { getEvents } from "@/lib/utils"
 import PaginationControls from "./paginationControls";
+import { getEvents } from "@/lib/server-utils";
 
 type EventsListProps = {
   city: string;
